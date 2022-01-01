@@ -10,7 +10,7 @@ def get_neccesary_info(code):
 
     # No city match found
     print("unrecognized city")
-    return 1
+    return 0
 
 def calculate_total_bus_stop(codes: list):
     total = 0
@@ -21,6 +21,8 @@ def calculate_total_bus_stop(codes: list):
 def calculate_total_possible_route(codes: list):
     total = 1
     for code in codes:
-        total = total * get_neccesary_info(code)
+        code_info = get_neccesary_info(code)
+        if code_info > 0:
+            total = total * code_info
     return total
 
