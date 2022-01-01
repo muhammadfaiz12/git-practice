@@ -1,17 +1,16 @@
 from database import get_database_rows
 
-def get_neccesary_info(inptcde):
-    #made with love by badru, to get number of stop in a city
-    qr_s = get_database_rows()["result"]
-    flag = False
-    for z in qr_s:
-        if z[0] == inptcde:
-            flag = True
-            return z[1] 
-    
-    if (flag == False):
-        print("unrecognized city")
-        return 1#ya busstop
+# Function to get number of stop in a city
+def get_neccesary_info(code):
+    data = get_database_rows()["result"]
+
+    for city in data:
+        if city[0] == code:
+            return city[1] 
+
+    # No city match found
+    print("unrecognized city")
+    return 1
 
 def calculate_total_bus_stop(codes: list):
     total = 0
