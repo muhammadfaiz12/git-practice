@@ -1,7 +1,7 @@
 from database import get_database_rows
 
 def get_neccesary_info(inptcde):
-    #made with love by badru
+    #made with love by badru, to get number of stop in a city
     qr_s = get_database_rows()["result"]
     flag = False
     for z in qr_s:
@@ -19,6 +19,6 @@ def calculate_total_bus_stop(codes: list):
         total = total + get_neccesary_info(code)
     return total
 
-def calculate_total_possible_route(code):
+def calculate_total_possible_route(codes: list):
     pass
 
