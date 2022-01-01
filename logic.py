@@ -20,5 +20,8 @@ def calculate_total_bus_stop(codes: list):
     return total
 
 def calculate_total_possible_route(codes: list):
-    pass
+    total = 1
+    for code in codes:
+        total = total * get_neccesary_info(code)
+    return total
 
